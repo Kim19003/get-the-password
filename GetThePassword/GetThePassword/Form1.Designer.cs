@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.copyPasswordButton = new System.Windows.Forms.Button();
             this.showPasswordCheckBox = new System.Windows.Forms.CheckBox();
@@ -35,6 +36,8 @@
             this.lengthTextBox = new System.Windows.Forms.TextBox();
             this.lengthLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lengthMinusButton = new System.Windows.Forms.Button();
+            this.lengthPlusButton = new System.Windows.Forms.Button();
             this.selectAllSpecialCharactersButton = new System.Windows.Forms.Button();
             this.resetSpecialCharactersButton = new System.Windows.Forms.Button();
             this.allowUpperLettersCheckBox = new System.Windows.Forms.CheckBox();
@@ -100,6 +103,7 @@
             this.lengthTextBox.TabIndex = 4;
             this.lengthTextBox.Text = "16";
             this.lengthTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lengthTextBox.TextChanged += new System.EventHandler(this.lengthTextBox_TextChanged);
             this.lengthTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lengthTextBox_KeyPress);
             // 
             // lengthLabel
@@ -114,6 +118,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lengthMinusButton);
+            this.panel1.Controls.Add(this.lengthPlusButton);
             this.panel1.Controls.Add(this.selectAllSpecialCharactersButton);
             this.panel1.Controls.Add(this.resetSpecialCharactersButton);
             this.panel1.Controls.Add(this.allowUpperLettersCheckBox);
@@ -128,8 +134,32 @@
             this.panel1.Controls.Add(this.createPasswordButton);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(590, 266);
+            this.panel1.Size = new System.Drawing.Size(582, 261);
             this.panel1.TabIndex = 6;
+            // 
+            // lengthMinusButton
+            // 
+            this.lengthMinusButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lengthMinusButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lengthMinusButton.Location = new System.Drawing.Point(270, 120);
+            this.lengthMinusButton.Name = "lengthMinusButton";
+            this.lengthMinusButton.Size = new System.Drawing.Size(23, 26);
+            this.lengthMinusButton.TabIndex = 13;
+            this.lengthMinusButton.Text = "-";
+            this.lengthMinusButton.UseVisualStyleBackColor = true;
+            this.lengthMinusButton.Click += new System.EventHandler(this.lengthMinusButton_Click);
+            // 
+            // lengthPlusButton
+            // 
+            this.lengthPlusButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lengthPlusButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lengthPlusButton.Location = new System.Drawing.Point(241, 120);
+            this.lengthPlusButton.Name = "lengthPlusButton";
+            this.lengthPlusButton.Size = new System.Drawing.Size(23, 26);
+            this.lengthPlusButton.TabIndex = 12;
+            this.lengthPlusButton.Text = "+";
+            this.lengthPlusButton.UseVisualStyleBackColor = true;
+            this.lengthPlusButton.Click += new System.EventHandler(this.lengthPlusButton_Click);
             // 
             // selectAllSpecialCharactersButton
             // 
@@ -206,9 +236,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 289);
+            this.ClientSize = new System.Drawing.Size(603, 282);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "GetThePassword";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
@@ -234,5 +265,7 @@
         private CheckBox allowNumbersCheckBox;
         private Button selectAllSpecialCharactersButton;
         private Button resetSpecialCharactersButton;
+        private Button lengthMinusButton;
+        private Button lengthPlusButton;
     }
 }

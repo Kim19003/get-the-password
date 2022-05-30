@@ -1,3 +1,6 @@
+using System.Security.Cryptography;
+using Helpers.Extensions;
+
 namespace GetThePassword
 {
     public partial class Form1 : Form
@@ -12,9 +15,13 @@ namespace GetThePassword
         readonly int[] lowerLettersASCIICodes = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
         // readonly int[] specialCharactersASCIICodes = { '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`' };
 
+        readonly RandomNumberGenerator random = RandomNumberGenerator.Create();
+
         public Form1()
         {
             InitializeComponent();
+
+            MaximizeBox = false;
 
             passwordTextBox.PasswordChar = passwordChar;
         }
@@ -22,12 +29,21 @@ namespace GetThePassword
         private void Form_Closing(object sender, FormClosingEventArgs e)
         {
             Properties.Settings.Default.Location = Location;
+            Properties.Settings.Default.AllowUpperLetters = allowUpperLettersCheckBox.Checked;
+            Properties.Settings.Default.AllowNumbers = allowNumbersCheckBox.Checked;
+            Properties.Settings.Default.IncludeSymbols = specialCharactersTextBox.Text.Trim();
+            Properties.Settings.Default.PasswordLength = !string.IsNullOrEmpty(lengthTextBox.Text) ? int.Parse(lengthTextBox.Text) : 0;
+
             Properties.Settings.Default.Save();
         }
 
         private void Form_Load(object sender, EventArgs e)
         {
             Location = new Point(Properties.Settings.Default.Location.X, Properties.Settings.Default.Location.Y);
+            allowUpperLettersCheckBox.Checked = Properties.Settings.Default.AllowUpperLetters;
+            allowNumbersCheckBox.Checked = Properties.Settings.Default.AllowNumbers;
+            specialCharactersTextBox.Text = Properties.Settings.Default.IncludeSymbols;
+            lengthTextBox.Text = Properties.Settings.Default.PasswordLength.ToString();
         }
 
         private void showPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -47,16 +63,17 @@ namespace GetThePassword
             Clipboard.SetText(passwordTextBox.Text);
         }
 
-        readonly Random random = new();
         private void createPasswordButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(lengthTextBox.Text))
             {
                 passwordTextBox.Text = "";
 
-                char[] insertedSpecialCharacters = !string.IsNullOrEmpty(specialCharactersTextBox.Text) ? specialCharactersTextBox.Text.ToCharArray() : Array.Empty<char>();
+                char[] insertedSpecialCharacters = !string.IsNullOrEmpty(specialCharactersTextBox.Text.Trim()) ? specialCharactersTextBox.Text.Trim().ToCharArray() : Array.Empty<char>();
 
-                for (int i = 0; i < int.Parse(lengthTextBox.Text); i++)
+                int passwordLength = int.Parse(lengthTextBox.Text);
+
+                for (int i = 0; i < passwordLength; i++)
                 {
                     while (true)
                     {
@@ -89,6 +106,30 @@ namespace GetThePassword
         private void selectAllSpecialCharactersButton_Click(object sender, EventArgs e)
         {
             specialCharactersTextBox.Text = allSpecialCharacters;
+        }
+
+        private void lengthPlusButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(lengthTextBox.Text))
+            {
+                lengthTextBox.Text = (int.Parse(lengthTextBox.Text) + 1).ToString();
+            }
+        }
+
+        private void lengthMinusButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(lengthTextBox.Text))
+            {
+                lengthTextBox.Text = (int.Parse(lengthTextBox.Text) - 1).ToString();
+            }
+        }
+
+        private void lengthTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(lengthTextBox.Text))
+            {
+                lengthTextBox.Text = int.Parse(lengthTextBox.Text) > 0 ? lengthTextBox.Text : 0.ToString();
+            }
         }
     }
 }

@@ -34,5 +34,53 @@ namespace GetThePassword.Properties {
                 this["Location"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AllowUpperLetters {
+            get {
+                return ((bool)(this["AllowUpperLetters"]));
+            }
+            set {
+                this["AllowUpperLetters"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AllowNumbers {
+            get {
+                return ((bool)(this["AllowNumbers"]));
+            }
+            set {
+                this["AllowNumbers"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("!\"#$%&\'()*+,-./")]
+        public string IncludeSymbols {
+            get {
+                return ((string)(this["IncludeSymbols"]));
+            }
+            set {
+                this["IncludeSymbols"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("16")]
+        public int PasswordLength {
+            get {
+                return ((int)(this["PasswordLength"]));
+            }
+            set {
+                this["PasswordLength"] = value;
+            }
+        }
     }
 }
