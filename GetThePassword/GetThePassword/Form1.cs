@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using Helpers.Extensions;
+using DataTransfer = Windows.ApplicationModel.DataTransfer;
 
 namespace GetThePassword
 {
@@ -60,7 +61,13 @@ namespace GetThePassword
 
         private void copyPasswordButton_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(passwordTextBox.Text);
+            DataTransfer.DataPackage dataPackage = new();
+            dataPackage.SetText(passwordTextBox.Text);
+
+            DataTransfer.Clipboard.SetContentWithOptions(dataPackage, new()
+            {
+                IsAllowedInHistory = false
+            });
         }
 
         private void createPasswordButton_Click(object sender, EventArgs e)
