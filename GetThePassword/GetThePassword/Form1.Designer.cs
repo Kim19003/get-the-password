@@ -49,58 +49,74 @@
             // 
             // passwordTextBox
             // 
+            this.passwordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.passwordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passwordTextBox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.passwordTextBox.ForeColor = System.Drawing.Color.White;
             this.passwordTextBox.Location = new System.Drawing.Point(21, 181);
+            this.passwordTextBox.MaxLength = 32768;
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.ReadOnly = true;
             this.passwordTextBox.Size = new System.Drawing.Size(393, 26);
-            this.passwordTextBox.TabIndex = 0;
+            this.passwordTextBox.TabIndex = 8;
             this.passwordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // copyPasswordButton
             // 
+            this.copyPasswordButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.copyPasswordButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.copyPasswordButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.copyPasswordButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.copyPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.copyPasswordButton.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.copyPasswordButton.ForeColor = System.Drawing.Color.White;
             this.copyPasswordButton.Location = new System.Drawing.Point(296, 213);
             this.copyPasswordButton.Name = "copyPasswordButton";
-            this.copyPasswordButton.Size = new System.Drawing.Size(118, 26);
-            this.copyPasswordButton.TabIndex = 1;
+            this.copyPasswordButton.Size = new System.Drawing.Size(118, 28);
+            this.copyPasswordButton.TabIndex = 11;
             this.copyPasswordButton.Text = "Copy";
-            this.copyPasswordButton.UseVisualStyleBackColor = true;
+            this.copyPasswordButton.UseVisualStyleBackColor = false;
             this.copyPasswordButton.Click += new System.EventHandler(this.copyPasswordButton_Click);
             // 
             // showPasswordCheckBox
             // 
             this.showPasswordCheckBox.AutoSize = true;
             this.showPasswordCheckBox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.showPasswordCheckBox.ForeColor = System.Drawing.Color.White;
             this.showPasswordCheckBox.Location = new System.Drawing.Point(226, 216);
             this.showPasswordCheckBox.Name = "showPasswordCheckBox";
             this.showPasswordCheckBox.Size = new System.Drawing.Size(64, 23);
-            this.showPasswordCheckBox.TabIndex = 2;
+            this.showPasswordCheckBox.TabIndex = 10;
             this.showPasswordCheckBox.Text = "Show";
             this.showPasswordCheckBox.UseVisualStyleBackColor = true;
             this.showPasswordCheckBox.CheckedChanged += new System.EventHandler(this.showPasswordCheckBox_CheckedChanged);
             // 
             // createPasswordButton
             // 
+            this.createPasswordButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.createPasswordButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.createPasswordButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.createPasswordButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.createPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createPasswordButton.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.createPasswordButton.ForeColor = System.Drawing.Color.White;
             this.createPasswordButton.Location = new System.Drawing.Point(21, 213);
             this.createPasswordButton.Name = "createPasswordButton";
-            this.createPasswordButton.Size = new System.Drawing.Size(118, 26);
-            this.createPasswordButton.TabIndex = 3;
+            this.createPasswordButton.Size = new System.Drawing.Size(118, 28);
+            this.createPasswordButton.TabIndex = 9;
             this.createPasswordButton.Text = "Create";
-            this.createPasswordButton.UseVisualStyleBackColor = true;
+            this.createPasswordButton.UseVisualStyleBackColor = false;
             this.createPasswordButton.Click += new System.EventHandler(this.createPasswordButton_Click);
             // 
             // lengthTextBox
             // 
+            this.lengthTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.lengthTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lengthTextBox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lengthTextBox.ForeColor = System.Drawing.Color.White;
             this.lengthTextBox.Location = new System.Drawing.Point(188, 120);
             this.lengthTextBox.MaxLength = 4;
             this.lengthTextBox.Name = "lengthTextBox";
             this.lengthTextBox.Size = new System.Drawing.Size(47, 26);
-            this.lengthTextBox.TabIndex = 4;
+            this.lengthTextBox.TabIndex = 5;
             this.lengthTextBox.Text = "16";
             this.lengthTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.lengthTextBox.TextChanged += new System.EventHandler(this.lengthTextBox_TextChanged);
@@ -110,6 +126,7 @@
             // 
             this.lengthLabel.AutoSize = true;
             this.lengthLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lengthLabel.ForeColor = System.Drawing.Color.White;
             this.lengthLabel.Location = new System.Drawing.Point(29, 123);
             this.lengthLabel.Name = "lengthLabel";
             this.lengthLabel.Size = new System.Drawing.Size(153, 19);
@@ -139,50 +156,66 @@
             // 
             // lengthMinusButton
             // 
+            this.lengthMinusButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.lengthMinusButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lengthMinusButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lengthMinusButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.lengthMinusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lengthMinusButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lengthMinusButton.ForeColor = System.Drawing.Color.White;
             this.lengthMinusButton.Location = new System.Drawing.Point(270, 120);
             this.lengthMinusButton.Name = "lengthMinusButton";
             this.lengthMinusButton.Size = new System.Drawing.Size(23, 26);
-            this.lengthMinusButton.TabIndex = 13;
+            this.lengthMinusButton.TabIndex = 7;
             this.lengthMinusButton.Text = "-";
-            this.lengthMinusButton.UseVisualStyleBackColor = true;
+            this.lengthMinusButton.UseVisualStyleBackColor = false;
             this.lengthMinusButton.Click += new System.EventHandler(this.lengthMinusButton_Click);
             // 
             // lengthPlusButton
             // 
+            this.lengthPlusButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.lengthPlusButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lengthPlusButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lengthPlusButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.lengthPlusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lengthPlusButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lengthPlusButton.ForeColor = System.Drawing.Color.White;
             this.lengthPlusButton.Location = new System.Drawing.Point(241, 120);
             this.lengthPlusButton.Name = "lengthPlusButton";
             this.lengthPlusButton.Size = new System.Drawing.Size(23, 26);
-            this.lengthPlusButton.TabIndex = 12;
+            this.lengthPlusButton.TabIndex = 6;
             this.lengthPlusButton.Text = "+";
-            this.lengthPlusButton.UseVisualStyleBackColor = true;
+            this.lengthPlusButton.UseVisualStyleBackColor = false;
             this.lengthPlusButton.Click += new System.EventHandler(this.lengthPlusButton_Click);
             // 
             // selectAllSpecialCharactersButton
             // 
+            this.selectAllSpecialCharactersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.selectAllSpecialCharactersButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.selectAllSpecialCharactersButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.selectAllSpecialCharactersButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.selectAllSpecialCharactersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.selectAllSpecialCharactersButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.selectAllSpecialCharactersButton.ForeColor = System.Drawing.Color.White;
             this.selectAllSpecialCharactersButton.Location = new System.Drawing.Point(494, 86);
             this.selectAllSpecialCharactersButton.Name = "selectAllSpecialCharactersButton";
             this.selectAllSpecialCharactersButton.Size = new System.Drawing.Size(68, 26);
-            this.selectAllSpecialCharactersButton.TabIndex = 11;
+            this.selectAllSpecialCharactersButton.TabIndex = 4;
             this.selectAllSpecialCharactersButton.Text = "All";
-            this.selectAllSpecialCharactersButton.UseVisualStyleBackColor = true;
+            this.selectAllSpecialCharactersButton.UseVisualStyleBackColor = false;
             this.selectAllSpecialCharactersButton.Click += new System.EventHandler(this.selectAllSpecialCharactersButton_Click);
             // 
             // resetSpecialCharactersButton
             // 
+            this.resetSpecialCharactersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.resetSpecialCharactersButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resetSpecialCharactersButton.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.resetSpecialCharactersButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.WindowFrame;
+            this.resetSpecialCharactersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetSpecialCharactersButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.resetSpecialCharactersButton.ForeColor = System.Drawing.Color.White;
             this.resetSpecialCharactersButton.Location = new System.Drawing.Point(420, 86);
             this.resetSpecialCharactersButton.Name = "resetSpecialCharactersButton";
             this.resetSpecialCharactersButton.Size = new System.Drawing.Size(68, 26);
-            this.resetSpecialCharactersButton.TabIndex = 10;
+            this.resetSpecialCharactersButton.TabIndex = 3;
             this.resetSpecialCharactersButton.Text = "Reset";
-            this.resetSpecialCharactersButton.UseVisualStyleBackColor = true;
+            this.resetSpecialCharactersButton.UseVisualStyleBackColor = false;
             this.resetSpecialCharactersButton.Click += new System.EventHandler(this.resetSpecialCharactersButton_Click);
             // 
             // allowUpperLettersCheckBox
@@ -191,10 +224,11 @@
             this.allowUpperLettersCheckBox.Checked = true;
             this.allowUpperLettersCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.allowUpperLettersCheckBox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.allowUpperLettersCheckBox.ForeColor = System.Drawing.Color.White;
             this.allowUpperLettersCheckBox.Location = new System.Drawing.Point(29, 21);
             this.allowUpperLettersCheckBox.Name = "allowUpperLettersCheckBox";
             this.allowUpperLettersCheckBox.Size = new System.Drawing.Size(199, 23);
-            this.allowUpperLettersCheckBox.TabIndex = 9;
+            this.allowUpperLettersCheckBox.TabIndex = 0;
             this.allowUpperLettersCheckBox.Text = "Allow upper letters";
             this.allowUpperLettersCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -204,10 +238,11 @@
             this.allowNumbersCheckBox.Checked = true;
             this.allowNumbersCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.allowNumbersCheckBox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.allowNumbersCheckBox.ForeColor = System.Drawing.Color.White;
             this.allowNumbersCheckBox.Location = new System.Drawing.Point(29, 55);
             this.allowNumbersCheckBox.Name = "allowNumbersCheckBox";
             this.allowNumbersCheckBox.Size = new System.Drawing.Size(145, 23);
-            this.allowNumbersCheckBox.TabIndex = 8;
+            this.allowNumbersCheckBox.TabIndex = 1;
             this.allowNumbersCheckBox.Text = "Allow numbers";
             this.allowNumbersCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -215,6 +250,7 @@
             // 
             this.specialCharactersLabel.AutoSize = true;
             this.specialCharactersLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.specialCharactersLabel.ForeColor = System.Drawing.Color.White;
             this.specialCharactersLabel.Location = new System.Drawing.Point(29, 89);
             this.specialCharactersLabel.Name = "specialCharactersLabel";
             this.specialCharactersLabel.Size = new System.Drawing.Size(153, 19);
@@ -223,12 +259,15 @@
             // 
             // specialCharactersTextBox
             // 
+            this.specialCharactersTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.specialCharactersTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.specialCharactersTextBox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.specialCharactersTextBox.ForeColor = System.Drawing.Color.White;
             this.specialCharactersTextBox.Location = new System.Drawing.Point(188, 86);
             this.specialCharactersTextBox.MaxLength = 32;
             this.specialCharactersTextBox.Name = "specialCharactersTextBox";
             this.specialCharactersTextBox.Size = new System.Drawing.Size(226, 26);
-            this.specialCharactersTextBox.TabIndex = 6;
+            this.specialCharactersTextBox.TabIndex = 2;
             this.specialCharactersTextBox.Text = "!\"#$%&\'()*+,-./";
             this.specialCharactersTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -236,6 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(603, 282);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using System.Security.Cryptography;
 using Helpers.Extensions;
 using DataTransfer = Windows.ApplicationModel.DataTransfer;
@@ -17,6 +18,8 @@ namespace GetThePassword
         // readonly int[] specialCharactersASCIICodes = { '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`' };
 
         readonly RandomNumberGenerator random = RandomNumberGenerator.Create();
+
+        readonly ReadOnlyCollection<int> readyPasswordLengths = new(new List<int>() { 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768 });
 
         public Form1()
         {
@@ -74,6 +77,8 @@ namespace GetThePassword
         {
             if (!string.IsNullOrEmpty(lengthTextBox.Text))
             {
+                Cursor.Current = Cursors.WaitCursor;
+
                 passwordTextBox.Text = "";
 
                 char[] insertedSpecialCharacters = !string.IsNullOrEmpty(specialCharactersTextBox.Text.Trim()) ? specialCharactersTextBox.Text.Trim().ToCharArray() : Array.Empty<char>();
@@ -97,6 +102,8 @@ namespace GetThePassword
                         }
                     }
                 }
+
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -119,7 +126,18 @@ namespace GetThePassword
         {
             if (!string.IsNullOrEmpty(lengthTextBox.Text))
             {
-                lengthTextBox.Text = (int.Parse(lengthTextBox.Text) + 1).ToString();
+                int passwordLength = int.Parse(lengthTextBox.Text);
+
+                if (!readyPasswordLengths.Contains(passwordLength))
+                {
+                    passwordLength = readyPasswordLengths.GetNextClosest(passwordLength);
+                }
+                else
+                {
+                    passwordLength = readyPasswordLengths.GetNextClosest(passwordLength * 2 - 1);
+                }
+
+                lengthTextBox.Text = passwordLength.ToString();
             }
         }
 
@@ -127,7 +145,18 @@ namespace GetThePassword
         {
             if (!string.IsNullOrEmpty(lengthTextBox.Text))
             {
-                lengthTextBox.Text = (int.Parse(lengthTextBox.Text) - 1).ToString();
+                int passwordLength = int.Parse(lengthTextBox.Text);
+
+                if (!readyPasswordLengths.Contains(passwordLength))
+                {
+                    passwordLength = readyPasswordLengths.GetPreviousClosest(passwordLength);
+                }
+                else
+                {
+                    passwordLength = readyPasswordLengths.GetPreviousClosest(passwordLength / 2 + 1);
+                }
+
+                lengthTextBox.Text = passwordLength.ToString();
             }
         }
 
