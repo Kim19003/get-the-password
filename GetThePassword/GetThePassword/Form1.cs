@@ -44,6 +44,10 @@ namespace GetThePassword
         private void Form_Load(object sender, EventArgs e)
         {
             Location = new Point(Properties.Settings.Default.Location.X, Properties.Settings.Default.Location.Y);
+            if (Location.X < 0 || Location.Y < 0 || Location.X > Screen.PrimaryScreen.Bounds.Width || Location.Y > Screen.PrimaryScreen.Bounds.Height)
+            {
+                CenterToScreen();
+            }
             allowUpperLettersCheckBox.Checked = Properties.Settings.Default.AllowUpperLetters;
             allowNumbersCheckBox.Checked = Properties.Settings.Default.AllowNumbers;
             specialCharactersTextBox.Text = Properties.Settings.Default.IncludeSymbols;
